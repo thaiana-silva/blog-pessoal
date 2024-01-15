@@ -11,6 +11,8 @@ import com.generation.blogpessoal.model.Postagem;
 
 //JPA dá poder a repository para comunicar-se com o banco de dados
 @Repository
-public interface PostagemRepository extends JpaRepository <Postagem, Long> {
-	List<Postagem> findAllByTittuloContainIgnoreCase(@Param("titulo") String titulo);
+public interface PostagemRepository extends JpaRepository<Postagem, Long>{
+	
+    List<Postagem> findAllByTituloContainingIgnoreCase(@Param("titulo") String titulo);
+    
 }

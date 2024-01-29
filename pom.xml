@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>blogpessoal</name>
 	<description>Projeto Blog Pessoal</description>
+	<url>https://spring.io/projects/spring-boot/blogpessoal</url>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -63,8 +64,20 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-test</artifactId>
+    	<scope>test</scope>
+    	<exclusions>
+    		<exclusion>
+    			<groupId>org.junit.vintage</groupId>
+    			<artifactId>junit-vintage-engine</artifactId>
+    		</exclusion>
+    	</exclusions>
+    </dependency>
+    <!-- Dependência do Banco de dados H2 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
